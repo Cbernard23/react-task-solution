@@ -18,14 +18,14 @@ const customStyles = {
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 //Modal.setAppElement('#login')
 
-class Login extends React.Component {
+class CreateProject extends React.Component {
   constructor() {
     super();
 
     this.state = {
       modalIsOpen: false,
-      loginEmail: "",
-      loginPassword: ""
+      projectName: "",
+      projectDescription: ""
     };
 
     this.openModal = this.openModal.bind(this);
@@ -104,19 +104,19 @@ class Login extends React.Component {
           <h2 ref={subtitle => this.subtitle = subtitle}>Login</h2>
           <form onSubmit={this.handleSubmit}>
              <label>
-               Email:
+               Project Name:
                <input
-                 name="loginEmail"
-                 type="email"
+                 name="projectName"
+                 type="text"
                  value={this.state.loginEmail}
                  onChange={this.handleInputChange} />
              </label>
              <label>
-               Password:
-               <input
-                 name="loginPassword"
+               Project Description:
+               <textarea
+                 name="projectDesctiption"
                  type="password"
-                 value={this.state.loginPassword}
+                 value={this.state.projectDescription}
                  onChange={this.handleInputChange} />
              </label>
              <input type="submit" value="Submit" />
